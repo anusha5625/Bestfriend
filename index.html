@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Best Friend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Miising You Hard!</h1>
+        <h2>Full Ahh paaru Thangoo edha :)</h2>
+        <img src="myfriend.jpeg" alt="Best Friend" class="friend-img">
+        <p>Do You Remember me, my dear bestfriend:)..!</p>
+        
+        <p>When you are watching this Thangoo?</p>
+        <button class="timeBtn" data-response="morningResponse">Morning</button>
+        <p id="morningResponse" class="response"></p>
+        <button class="timeBtn" data-response="afternoonResponse">Afternoon</button>
+        <p id="afternoonResponse" class="response"></p>
+        <button class="timeBtn" data-response="eveningResponse">Evening</button>
+        <p id="eveningResponse" class="response"></p>
+        <button class="timeBtn" data-response="midnightResponse">Midnight</button>
+        <p id="midnightResponse" class="response"></p>
+        
+        <p>Saaptiya Thangoo?</p>
+        <button class="foodBtn" data-response="saptenResponse">Sapten</button>
+        <p id="saptenResponse" class="response"></p>
+        <button class="foodBtn" data-response="illaResponse">Illa</button>
+        <p id="illaResponse" class="response"></p>
+        
+        <p>Yea Naama Palaya mari ila nee unaku neraya problem erukunu sonna, apdiyae enna avoid panita neeyu enna thaniya aakita, neyu pesiradha nu sona apo enaku yarume illadha maari aagiruchi. Adha na apdi panita, ennala unaku help pana mudila. Yean na na iv poitu varadhukulla veetlayu seri entayu seri romba neraya problem vandhuruchi na romba struggle aana elathulayu Enala handle pani veliya vara mudila innu na struggle panitu dha eruka, adhuku nama friendship ena panuchinu therla thangoo nama 50% kuda munna mari ila edhula en mela thappu erundhuchiina, I'm sorry adhuku romba.</p>
+        
+        <p>PLEASE ACCEPT MY APOLOGY THANGOO</p>
+        <button id="yesBtn">Yes</button>
+        <p id="yesResponse" class="response"></p>
+        <button id="noBtn">No</button>
+        <p id="noResponse" class="response"></p>
+        
+        <p>Naama eppavum polavae erukalam la :) I miss us, elaru kitaayu evil eye over aagiruchinu ninaikra naama friendship mela.</p>
+        
+        <img src="Midhun.jpeg" alt="Mybestfriend" class="friend-img">
+        <p>Nee ennna eppayachi miss panna call pannu...Did I really Wanted to lose you too Thangoo?</p>
+        <p>Byee Thangooo BY- I hope always Your Thangam(Anu)</p>
+
+    </div>
+    
+    <script>
+        document.querySelectorAll(".timeBtn, .foodBtn").forEach(button => {
+            button.addEventListener("click", function() {
+                document.querySelectorAll(".response").forEach(p => p.innerText = "");
+                let responseId = this.getAttribute("data-response");
+                document.getElementById(responseId).innerText = this.innerText + "! " + getResponseText(responseId);
+            });
+        });
+
+        document.getElementById("yesBtn").addEventListener("click", function() {
+            document.querySelectorAll(".response").forEach(p => p.innerText = "");
+            document.getElementById("yesResponse").innerText = "Thank you for understanding! It means a lot.";
+        });
+
+        document.getElementById("noBtn").addEventListener("click", function() {
+            document.querySelectorAll(".response").forEach(p => p.innerText = "");
+            document.getElementById("noResponse").innerText = "I respect your feelings. Can we talk about it?";
+        });
+
+        function getResponseText(responseId) {
+            const responses = {
+                "morningResponse": "Hope you have a great start to your day!",
+                "afternoonResponse": "Hope your day is going well!",
+                "eveningResponse": "Hope you had a great day!",
+                "midnightResponse": "Take care and get some rest soon!",
+                "saptenResponse": "Good! Stay healthy!",
+                "illaResponse": "You should eat something soon!"
+            };
+            return responses[responseId] || "";
+        }
+    </script>
+</body>
+</html>
